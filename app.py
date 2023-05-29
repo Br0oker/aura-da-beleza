@@ -16,7 +16,7 @@ def index():
         return 'Obrigado por enviar o formulário!'
     
     # Se não houver solicitação POST, exiba o formulário
-    return render_template('formulario.html')
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run()
