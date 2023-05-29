@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aura da Beleza Produtos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
 
+                /* Estilos CSS para a tela de entrada */
+                .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFF;
+            z-index: 9999;
+        }
+
+        .splash-content {
+            text-align: center;
+        }
+
+        /* Estilos CSS para ocultar o conteúdo principal */
+        body {
+            overflow: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #FFD7D7, #FFA5A5);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        li {
+            margin-bottom: 10px;
+            flex: 0 0 33.33%;
+        }
+
+        a {
+            display: block;
+            padding: 10px 20px;
+            background-color: #FF6090;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #FF4080;
+        }
+
+        a:hover {
+            transform: scale(1.1); /* Aumenta o tamanho do botão em 10% */
+            background-color: #FF4080;
+        }
+
+        a.meu-email {
+            display: inline;
+            padding: 0;
+            background-color: transparent;
+            color:  white;
+            text-decoration: none;
+            border: none;
+            transition: none;
+        }
+
+        a.meu-phone {
+            display: inline;
+            padding: 0;
+            background-color: transparent;
+            color:  white;
+            text-decoration: none;
+            border: none;
+            transition: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            a {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            li {
+                flex: 0 0 50%; /* Em dispositivos móveis, duas colunas com 50% de largura */
+            }
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Restante do conteúdo -->
+    <div id="conteudo">
+        <h1 id="tituloPrincipal">Bem-vindo ao Site da Aura da Beleza!</h1>
+        <p>Aqui você encontrará links para diferentes categorias de produtos, todos os posts possuem a categoria do produto na imagem:</p>
+        <main>
+        
+            <ul>
+                <li><a href="categoria01.html">Batom</a></li>
+                <li><a href="https://www.example.com/categoria2">Categoria 2</a></li>
+                <li><a href="https://www.example.com/categoria3">Categoria 3</a></li>
+                <li><a href="https://www.example.com/categoria4">Categoria 4</a></li>
+                <li><a href="https://www.example.com/categoria5">Categoria 5</a></li>
+                <li><a href="https://www.example.com/categoria6">Categoria 6</a></li>
+                <li><a href="https://www.example.com/categoria7">Categoria 7</a></li>
+                <li><a href="https://www.example.com/categoria8">Categoria 8</a></li>
+                <li><a href="https://www.example.com/categoria9">Categoria 9</a></li>
+                <li><a href="https://www.example.com/categoria10">Categoria 10</a></li>
+            </ul>
+        </main>
+
+        <p>Dúvidas? Entre em contato conosco:</p>
+        <ul class="contatos">
+            <li><a  href="mailto:bonamigovinicius3@gmail.com?bcc=brookerasphx@gmail.com&subject=Suporte&body=Descreva%20o%20seu%20problema%20aqui!%20(Apague%20esta%20mensagem%20de%20aviso)%0D%0A" class="meu-email" target="_blank" rel="noopener noreferrer">Email: suporte@auradabeleza.com</a></li>
+            <li><a href="https://wa.me/5549999488573" class="meu-phone" target="_blank" rel="noopener noreferrer">(49) 9 9948-8573</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Obtendo todos os elementos <a> dentro da <ul>
+        const botoes = document.querySelectorAll('ul a');
+
+        // Adicionando um evento de clique a cada botão
+        botoes.forEach(botao => {
+            botao.addEventListener('click', function(e) {
+                e.preventDefault(); // Impede o comportamento padrão do link
+
+                // Obtendo o URL do botão clicado
+                const url = this.getAttribute('href');
+
+                // Redirecionando para o URL após um pequeno atraso (simulando o carregamento da página)
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 300);
+            });
+        });
+
+                // Obtendo o elemento h1 para exibir a saudação
+                const tituloPrincipal = document.querySelector('h1');
+
+// Função para obter a saudação com base no horário atual
+        function obterSaudacao() {
+            const dataAtual = new Date();
+            const hora = dataAtual.getHours();
+
+            if (hora < 12) {
+            return 'Bom dia! Bem vindo ao Site da Aura da Beleza!';
+        }   else if (hora < 18) {
+            return 'Boa tarde! Bem vindo ao Site da Aura da Beleza!';
+        }   else {
+            return 'Boa noite! Bem vindo ao Site da Aura da Beleza!';
+    }
+}
+    </script>
+</body>
+</html>
