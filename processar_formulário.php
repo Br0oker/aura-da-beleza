@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     file_put_contents('dados.csv', $linha, FILE_APPEND);
 
     // Redireciona de volta para a página principal
-    header('Location: index.html');
+    header('Location: pagina_inicial.html');
     exit;
 }
 ?>
